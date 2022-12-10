@@ -1,45 +1,76 @@
-.counter{
-    background-color: darkslategray;
-    padding: 40px;
-    position: fixed; top: 5%; left: 10%;
-    border-style: solid;
-    border-color: cadetblue ;
-}
-.phone{
-   margin-left:1%;
-    width: 100%;
-    text-align: center;
-    border: 1px solid;
-    background-color: cadetblue;
-}
-.phone-error{
-    margin-left:1%;
-    width: 100%;
-    text-align: center;
-    border: 1px solid;
-    background-color: burlywood;
-}
-.button{
-background-color: cadetblue;
-    border: 1px solid;
-    border-radius: 10px;
-    margin: 2px;
-}
-.button:active{
-    background-color: burlywood;
-    border: 1px solid;
-    border-radius: 10px;
-    margin: 2px;
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.bord-button{
+.app > div {
+
+}
+
+.phone {
+    height: 100px;
+    width: 150px;
+    border: solid 2px black;
+
+
+
+}
+
+.phone-error {
+    height: 100px;
+    width: 150px;
+    border: solid 2px black;
+    background-color: coral;
+}
+
+.button {
+    background-color: cadetblue;
     border: 1px solid;
     border-radius: 10px;
+    margin: 1px;
+    font-weight: bold;
+    font-size: 24px;
 }
-.error-button{
+
+.button:active {
+    background-color: burlywood;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 1px;
+    font-size: 24px;
+}
+
+.bord-button {
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+.error-button {
     background-color: gray;
     border: 1px solid;
     border-radius: 10px;
     margin: 2px;
+    font-size: 24px;
+}
+
+.input {
+    display: flex;
+    width: 30px;
+    margin-left: 50%
+
+}
+
+.point {
+    text-align: center;
+    font-size: 50px;
+
+}
+.label{
+    flex-direction: column;
 }
 

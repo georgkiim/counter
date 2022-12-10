@@ -2,30 +2,31 @@ import React, {useState} from "react";
 import {Button} from "./Button";
 
 
-const Counter = () => {
-    const minValue = 0;
-    const maxValue = 5;
-    const [point, setPoint] = useState<number>(minValue)
-    const addPoint = () => {
-        if(point<maxValue) {
-            setPoint(point+1)
-        }
-    }
-    const resetPoint = () =>{
-        setPoint(minValue)
+type CounterType={
+    maxValue:number
+    minValue:number
+    point:number
+    addPoint:()=>void
+    resetPoint:()=>void
+}
 
-    }
-    const isErrorInc = point === maxValue
-    const isErrorReset = point===minValue
+
+const Counter = (props:CounterType) => {
+    const isErrorInc = props.point === props.maxValue
+    const isErrorReset = props.point === props.minValue
     return (
         <div>
-            <h1 className={isErrorInc?'phone-error':'phone'}>{point}</h1>
+            <div className={isErrorInc ? 'phone-error' : 'phone'}>
+                <span className={'point'}>{props.point}</span>
+            </div>
+
             <div className='bord-button'>
-                <Button onClick={addPoint} buttonName={'Inc'} classParameter={isErrorInc} />
-                <Button onClick={resetPoint} buttonName={'Reset'} classParameter={isErrorReset}/>
+                <Button onClick={props.addPoint} buttonName={'Inc'} classParameter={isErrorInc}/>
+                <Button onClick={props.resetPoint} buttonName={'Reset'} classParameter={isErrorReset}/>
             </div>
         </div>
     )
 }
 export default Counter
+
 
