@@ -9,8 +9,9 @@ type CounterType = {
     error: boolean
     setError: (h: boolean) => void
     inputParameter:boolean
+    setSetting:(h:boolean)=>void
 }
-const Counter = (props: CounterType) => {
+const Counter2 = (props: CounterType) => {
     const isErrorInc = props.point === props.maxValue
     const isErrorReset = props.point === props.minValue
     return (
@@ -24,11 +25,12 @@ const Counter = (props: CounterType) => {
             <div className='bord-button'>
                 <Button onClick={props.addPoint} buttonName={'Inc'} classParameter={isErrorInc}/>
                 <Button onClick={props.resetPoint} buttonName={'Reset'} classParameter={isErrorReset}/>
+                <Button onClick={()=>props.setSetting(false)} buttonName={'Set'} classParameter={false}/>
 
             </div>
         </div>
     )
 }
-export default Counter
+export default Counter2
 
 

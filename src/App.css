@@ -1,10 +1,12 @@
 .app {
-    width: 150px;
+    width: 300px;
+
     display: flex;
 }
 
 .app > div {
 margin: 2px;
+
 }
 
 .phone {
