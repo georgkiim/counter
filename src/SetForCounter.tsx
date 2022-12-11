@@ -19,6 +19,7 @@ type CounterType = {
 }
 const SetForCounter = (props: CounterType) => {
     const onInputMinChange = (e: ChangeEvent<HTMLInputElement>) => {
+
         props.setMin(e.currentTarget.valueAsNumber)
         props.setError(true)
     }
@@ -38,6 +39,7 @@ const SetForCounter = (props: CounterType) => {
                           value={props.max}
                           inputParameter={props.inputParameter}/>
             </div>
+
             <div className='bord-button'>
                 <Button onClick={props.buttonSet} buttonName={'Set'} classParameter={!props.inputParameter}/>
             </div>
