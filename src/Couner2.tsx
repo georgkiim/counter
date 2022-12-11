@@ -26,7 +26,6 @@ const Counter2 = (props: CounterType) => {
                 <Button onClick={props.addPoint} buttonName={'Inc'} classParameter={isErrorInc}/>
                 <Button onClick={props.resetPoint} buttonName={'Reset'} classParameter={isErrorReset}/>
                 <Button onClick={()=>props.setSetting(false)} buttonName={'Set'} classParameter={false}/>
-
             </div>
         </div>
     )

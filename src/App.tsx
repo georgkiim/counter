@@ -32,8 +32,6 @@ function App() {
                      error={error}
                      setError={setError}
                      inputParameter={inputParameter}
-
-
             />
             <SetForCounter maxValue={maxValue}
                            minValue={minValue}
@@ -48,7 +46,6 @@ function App() {
                            setError={setError}
                            inputParameter={inputParameter}
             />
-
         </div>
     )
 }

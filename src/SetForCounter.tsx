@@ -37,9 +37,7 @@ const SetForCounter = (props: CounterType) => {
                           onChange={onInputMaxChange}
                           value={props.max}
                           inputParameter={props.inputParameter}/>
-
             </div>
-
             <div className='bord-button'>
                 <Button onClick={props.buttonSet} buttonName={'Set'} classParameter={!props.inputParameter}/>
             </div>
