@@ -18,10 +18,11 @@ const Counter = (props: CounterType) => {
     return (
         <div className={s.counter}>
             <div className={isErrorInc || props.error ? s.red : s.count}>
-                {props.inputParameter && <span className={props.error ? s.text : ''}>
-                    {props.error ? 'Please set the value' : props.point}
-                </span>}
-                {!props.inputParameter && <div className={s.error}>Incorrect VALUE!!!</div>}
+                {props.inputParameter
+                    ? <span className={props.error ? s.text : ''}>
+                        {props.error ? 'Please set the value' : props.point}
+                    </span>
+                    : <div className={s.error}>Incorrect VALUE!!!</div>}
             </div>
             <div className={s.wrapper}>
                 <Button onClick={props.addPoint} buttonName={'Inc'} classParameter={isErrorInc}/>
