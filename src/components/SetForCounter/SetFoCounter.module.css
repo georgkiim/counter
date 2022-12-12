@@ -1,0 +1,29 @@
+.setCounter {
+    margin: 15px;
+    padding: 10px;
+    height: 180px;
+    width: 300px;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+}
+
+.wrapper2 {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+}
+

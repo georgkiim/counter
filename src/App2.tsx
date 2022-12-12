@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import Counter from "./Couner";
-import Counter2 from './Couner2';
-import SetForCounter from "./SetForCounter";
-import SetForCounter2 from './SetForCounter2';
+import Counter from "./components/Counter/Couner";
+import Counter2 from './components/Counter/Couner2';
+import SetForCounter from "./components/SetForCounter/SetForCounter";
+import SetForCounter2 from './components/SetForCounter/SetForCounter2';
 
 function App() {
     const [minValue, setMinValue] = useState(0);

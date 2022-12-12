@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {Button} from "./Button";
+import {Button} from "../Button/Button";
+import s from './Counter.module.css'
 
 type CounterType = {
     maxValue: number
@@ -15,14 +16,14 @@ const Counter = (props: CounterType) => {
     const isErrorInc = props.error || !props.inputParameter || props.point === props.maxValue
     const isErrorReset = props.error || !props.inputParameter || props.point === props.minValue
     return (
-        <div>
-            <div className={isErrorInc || props.error ? 'phone-error' : 'phone'}>
-                {props.inputParameter && <span className={props.error ? 'error-point' : 'point'}>
+        <div className={s.counter}>
+            <div className={isErrorInc || props.error ? s.red : s.count}>
+                {props.inputParameter && <span className={props.error ? s.text : ''}>
                     {props.error ? 'Please set the value' : props.point}
                 </span>}
-                {!props.inputParameter && <span className={'error-point-input'}>Incorrect VALUE!!!</span>}
+                {!props.inputParameter && <div className={s.error}>Incorrect VALUE!!!</div>}
             </div>
-            <div className='bord-button'>
+            <div className={s.wrapper}>
                 <Button onClick={props.addPoint} buttonName={'Inc'} classParameter={isErrorInc}/>
                 <Button onClick={props.resetPoint} buttonName={'Reset'} classParameter={isErrorReset}/>
 

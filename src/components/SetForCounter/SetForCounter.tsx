@@ -1,6 +1,7 @@
 import React, {ChangeEvent} from "react";
-import {Button} from "./Button";
-import {InputSet} from "./InputSet";
+import {Button} from "../Button/Button";
+import {InputSet} from "../Input/InputSet";
+import s from './SetFoCounter.module.css'
 
 
 type CounterType = {
@@ -19,6 +20,7 @@ type CounterType = {
 }
 const SetForCounter = (props: CounterType) => {
     const onInputMinChange = (e: ChangeEvent<HTMLInputElement>) => {
+
         props.setMin(e.currentTarget.valueAsNumber)
         props.setError(true)
     }
@@ -27,8 +29,8 @@ const SetForCounter = (props: CounterType) => {
         props.setError(true)
     }
     return (
-        <div>
-            <div className={'phone'}>
+        <div className={s.setCounter}>
+            <div className={s.wrapper2}>
                 <InputSet title={'MINValue:'}
                           onChange={onInputMinChange}
                           value={props.min}
@@ -37,10 +39,9 @@ const SetForCounter = (props: CounterType) => {
                           onChange={onInputMaxChange}
                           value={props.max}
                           inputParameter={props.inputParameter}/>
-
             </div>
 
-            <div className='bord-button'>
+            <div className={s.wrapper}>
                 <Button onClick={props.buttonSet} buttonName={'Set'} classParameter={!props.inputParameter}/>
             </div>
         </div>
