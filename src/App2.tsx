@@ -6,8 +6,10 @@ import SetForCounter from "./components/SetForCounter/SetForCounter";
 import SetForCounter2 from './components/SetForCounter/SetForCounter2';
 
 function App() {
-    const [minValue, setMinValue] = useState(0);
-    const [maxValue, setMaxValue] = useState(5);
+    let newLocalMinValue = localStorage.getItem('counterValueMinValue')
+    let newLocalMaxValue = localStorage.getItem('counterValueMaxValue')
+    const [minValue, setMinValue] = useState(newLocalMinValue ? +newLocalMinValue : 0);
+    const [maxValue, setMaxValue] = useState(newLocalMaxValue ? +newLocalMaxValue : 0);
     const [error, setError] = useState(false)
     const [point, setPoint] = useState<number>(minValue)
     const [setting, setSetting] = useState(true)
@@ -26,6 +28,14 @@ function App() {
     useEffect(() => {
         localStorage.setItem('counterValueMax', JSON.stringify(max))
     }, [max])
+
+    useEffect(() => {
+        localStorage.setItem('counterValueMinValue', JSON.stringify(minValue))
+    }, [minValue])
+
+    useEffect(() => {
+        localStorage.setItem('counterValueMaxValue', JSON.stringify(maxValue))
+    }, [maxValue])
 
     const buttonSet = () => {
         if (inputParameter) {
